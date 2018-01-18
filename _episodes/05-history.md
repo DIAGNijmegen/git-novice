@@ -32,7 +32,7 @@ $ cat mars.txt
 
 ~~~
 Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
+The two moons may be a problem for Alice
 But the Mummy will appreciate the lack of humidity
 An ill-considered change
 ~~~
@@ -52,7 +52,7 @@ index b36abfd..0848c8d 100644
 +++ b/mars.txt
 @@ -1,3 +1,4 @@
  Cold and dry, but everything is my favorite color
- The two moons may be a problem for Wolfman
+ The two moons may be a problem for Alice
  But the Mummy will appreciate the lack of humidity
 +An ill-considered change.
 ~~~
@@ -83,7 +83,7 @@ index df0654a..b36abfd 100644
 +++ b/mars.txt
 @@ -1 +1,4 @@
  Cold and dry, but everything is my favorite color
-+The two moons may be a problem for Wolfman
++The two moons may be a problem for Alice
 +But the Mummy will appreciate the lack of humidity
 +An ill-considered change
 ~~~
@@ -98,7 +98,7 @@ $ git show HEAD~2 mars.txt
 
 ~~~
 commit 34961b159c27df3b475cfe4415d94a6d1fcd064d
-Author: Vlad Dracula <vlad@tran.sylvan.ia>
+Author: Bob <bob@github.com>
 Date:   Thu Aug 22 10:07:21 2013 -0400
 
     Start notes on Mars as a base
@@ -144,7 +144,7 @@ index df0654a..93a3e13 100644
 +++ b/mars.txt
 @@ -1 +1,4 @@
  Cold and dry, but everything is my favorite color
-+The two moons may be a problem for Wolfman
++The two moons may be a problem for Alice
 +But the Mummy will appreciate the lack of humidity
 +An ill-considered change
 ~~~
@@ -166,7 +166,7 @@ index df0654a..93a3e13 100644
 +++ b/mars.txt
 @@ -1 +1,4 @@
  Cold and dry, but everything is my favorite color
-+The two moons may be a problem for Wolfman
++The two moons may be a problem for Alice
 +But the Mummy will appreciate the lack of humidity
 +An ill-considered change
 ~~~
@@ -219,7 +219,7 @@ $ cat mars.txt
 
 ~~~
 Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
+The two moons may be a problem for Alice
 But the Mummy will appreciate the lack of humidity
 ~~~
 {: .output}

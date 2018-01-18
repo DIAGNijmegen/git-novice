@@ -30,7 +30,7 @@ $ cat mars.txt
 
 ~~~
 Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
+The two moons may be a problem for Alice
 But the Mummy will appreciate the lack of humidity
 ~~~
 {: .output}
@@ -45,9 +45,9 @@ $ cat mars.txt
 
 ~~~
 Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
+The two moons may be a problem for Alice
 But the Mummy will appreciate the lack of humidity
-This line added to Wolfman's copy
+This line added to Alice's copy
 ~~~
 {: .output}
 
@@ -76,7 +76,7 @@ Delta compression using up to 4 threads.
 Compressing objects: 100% (3/3), done.
 Writing objects: 100% (3/3), 352 bytes, done.
 Total 3 (delta 1), reused 0 (delta 0)
-To https://github.com/vlad/planets
+To https://github.com/bob/planets
    29aba7c..dabb4c8  master -> master
 ~~~
 {: .output}
@@ -93,7 +93,7 @@ $ cat mars.txt
 
 ~~~
 Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
+The two moons may be a problem for Alice
 But the Mummy will appreciate the lack of humidity
 We added a different line in the other copy
 ~~~
@@ -121,9 +121,9 @@ $ git push origin master
 {: .bash}
 
 ~~~
-To https://github.com/vlad/planets.git
+To https://github.com/bob/planets.git
  ! [rejected]        master -> master (non-fast-forward)
-error: failed to push some refs to 'https://github.com/vlad/planets.git'
+error: failed to push some refs to 'https://github.com/bob/planets.git'
 hint: Updates were rejected because the tip of your current branch is behind
 hint: its remote counterpart. Merge the remote changes (e.g. 'git pull')
 hint: before pushing again.
@@ -150,7 +150,7 @@ remote: Counting objects: 5, done.
 remote: Compressing objects: 100% (2/2), done.
 remote: Total 3 (delta 1), reused 3 (delta 1)
 Unpacking objects: 100% (3/3), done.
-From https://github.com/vlad/planets
+From https://github.com/bob/planets
  * branch            master     -> FETCH_HEAD
 Auto-merging mars.txt
 CONFLICT (content): Merge conflict in mars.txt
@@ -168,12 +168,12 @@ $ cat mars.txt
 
 ~~~
 Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
+The two moons may be a problem for Alice
 But the Mummy will appreciate the lack of humidity
 <<<<<<< HEAD
 We added a different line in the other copy
 =======
-This line added to Wolfman's copy
+This line added to Alice's copy
 >>>>>>> dabb4c8c450e8475aee9b14b4383acc99f42af1d
 ~~~
 {: .output}
@@ -198,7 +198,7 @@ $ cat mars.txt
 
 ~~~
 Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
+The two moons may be a problem for Alice
 But the Mummy will appreciate the lack of humidity
 We removed the conflict on this line
 ~~~
@@ -249,7 +249,7 @@ Delta compression using up to 4 threads.
 Compressing objects: 100% (6/6), done.
 Writing objects: 100% (6/6), 697 bytes, done.
 Total 6 (delta 2), reused 0 (delta 0)
-To https://github.com/vlad/planets.git
+To https://github.com/bob/planets.git
    dabb4c8..2abf2b1  master -> master
 ~~~
 {: .output}
@@ -268,7 +268,7 @@ remote: Counting objects: 10, done.
 remote: Compressing objects: 100% (4/4), done.
 remote: Total 6 (delta 2), reused 6 (delta 2)
 Unpacking objects: 100% (6/6), done.
-From https://github.com/vlad/planets
+From https://github.com/bob/planets
  * branch            master     -> FETCH_HEAD
 Updating dabb4c8..2abf2b1
 Fast-forward
@@ -286,7 +286,7 @@ $ cat mars.txt
 
 ~~~
 Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
+The two moons may be a problem for Alice
 But the Mummy will appreciate the lack of humidity
 We removed the conflict on this line
 ~~~
@@ -332,7 +332,7 @@ Conflicts can also be minimized with project management strategies:
 >
 > > ## Solution
 > >
-> > Let's try it. Suppose Dracula takes a picture of Martian surface and
+> > Let's try it. Suppose Bob takes a picture of Martian surface and
 > > calls it `mars.jpg`.
 > >
 > > If you do not have an image file of Mars available, you can create
@@ -345,14 +345,14 @@ Conflicts can also be minimized with project management strategies:
 > > {: .bash}
 > >
 > > ~~~
-> > -rw-r--r-- 1 vlad 57095 1.0K Mar  8 20:24 mars.jpg
+> > -rw-r--r-- 1 bob 57095 1.0K Mar  8 20:24 mars.jpg
 > > ~~~
 > > {: .output}
 > >
 > > `ls` shows us that this created a 1-kilobyte file. It is full of
 > > random bytes read from the special file, `/dev/urandom`.
 > >
-> > Now, suppose Dracula adds `mars.jpg` to his repository:
+> > Now, suppose Bob adds `mars.jpg` to his repository:
 > >
 > > ~~~
 > > $ git add mars.jpg
@@ -367,9 +367,9 @@ Conflicts can also be minimized with project management strategies:
 > > ~~~
 > > {: .output}
 > >
-> > Suppose that Wolfman has added a similar picture in the meantime.
+> > Suppose that Alice has added a similar picture in the meantime.
 > > His is a picture of the Martian sky, but it is *also* called `mars.jpg`.
-> > When Dracula tries to push, he gets a familiar message:
+> > When Bob tries to push, he gets a familiar message:
 > >
 > > ~~~
 > > $ git push origin master
@@ -377,9 +377,9 @@ Conflicts can also be minimized with project management strategies:
 > > {: .bash}
 > >
 > > ~~~
-> > To https://github.com/vlad/planets.git
+> > To https://github.com/bob/planets.git
 > >  ! [rejected]        master -> master (fetch first)
-> > error: failed to push some refs to 'https://github.com/vlad/planets.git'
+> > error: failed to push some refs to 'https://github.com/bob/planets.git'
 > > hint: Updates were rejected because the remote contains work that you do
 > > hint: not have locally. This is usually caused by another repository pushing
 > > hint: to the same ref. You may want to first integrate the remote changes
@@ -404,7 +404,7 @@ Conflicts can also be minimized with project management strategies:
 > > remote: Compressing objects: 100% (3/3), done.
 > > remote: Total 3 (delta 0), reused 0 (delta 0)
 > > Unpacking objects: 100% (3/3), done.
-> > From https://github.com/vlad/planets.git
+> > From https://github.com/bob/planets.git
 > >  * branch            master     -> FETCH_HEAD
 > >    6a67967..439dc8c  master     -> origin/master
 > > warning: Cannot merge binary files: mars.jpg (HEAD vs. 439dc8c08869c342438f6dc4a2b615b05b93c76e)
@@ -426,7 +426,7 @@ Conflicts can also be minimized with project management strategies:
 > > the version we want to keep. Then we can add and commit this version.
 > >
 > > On the key line above, Git has conveniently given us commit identifiers
-> > for the two versions of `mars.jpg`. Our version is `HEAD`, and Wolfman's
+> > for the two versions of `mars.jpg`. Our version is `HEAD`, and Alice's
 > > version is `439dc8c0...`. If we want to use our version, we can use
 > > `git checkout`:
 > >
@@ -442,8 +442,8 @@ Conflicts can also be minimized with project management strategies:
 > > ~~~
 > > {: .output}
 > >
-> > If instead we want to use Wolfman's version, we can use `git checkout` with
-> > Wolfman's commit identifier, `439dc8c0`:
+> > If instead we want to use Alice's version, we can use `git checkout` with
+> > Alice's commit identifier, `439dc8c0`:
 > >
 > > ~~~
 > > $ git checkout 439dc8c0 mars.jpg
