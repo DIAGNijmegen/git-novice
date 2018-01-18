@@ -14,6 +14,13 @@ keypoints:
 - "`git pull` copies changes from a remote repository to a local repository."
 ---
 
+> ## Github: Your account and the organisation
+>
+> In this section please create the repo on your own account, 
+> for anything else DIAG related please create it in the DIAGNijmegen
+> organisation (see a later lesson).
+{: .callout}
+
 Version control really comes into its own when we begin to collaborate with
 other people.  We already have most of the machinery we need to do this; the
 only thing missing is to copy changes from one repository to another.
