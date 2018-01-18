@@ -22,16 +22,16 @@ of configurations we will set as we get started with Git:
 
 On a command line, Git commands are written as `git verb`,
 where `verb` is what we actually want to do. So here is how
-Dracula sets up his new laptop:
+Bram sets up his new laptop:
 
 ~~~
-$ git config --global user.name "Vlad Dracula"
-$ git config --global user.email "vlad@tran.sylvan.ia"
+$ git config --global user.name "Bram van Ginneken"
+$ git config --global user.email "bramvanginneken@users.noreply.github.com"
 $ git config --global color.ui "auto"
 ~~~
 {: .bash}
 
-Please use your own name and email address instead of Dracula's. This user name and email will be associated with your subsequent Git activity,
+Please use your own name and email address instead of Bram's. This user name and email will be associated with your subsequent Git activity,
 which means that any changes pushed to
 [GitHub](https://github.com/),
 [BitBucket](https://bitbucket.org/),
@@ -112,27 +112,6 @@ $ git config --list
 
 You can change your configuration as many times as you want: just use the
 same commands to choose another editor or update your email address.
-
-> ## Proxy
->
-> In some networks you need to use a
-> [proxy](https://en.wikipedia.org/wiki/Proxy_server). If this is the case, you
-> may also need to tell Git about the proxy:
->
-> ~~~
-> $ git config --global http.proxy proxy-url
-> $ git config --global https.proxy proxy-url
-> ~~~
-> {: .bash}
->
-> To disable the proxy, use
->
-> ~~~
-> $ git config --global --unset http.proxy
-> $ git config --global --unset https.proxy
-> ~~~
-> {: .bash}
-{: .callout}
 
 > ## Git Help and Manual
 >
