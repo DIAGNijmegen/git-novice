@@ -20,20 +20,20 @@ As we saw in the previous lesson, we can refer to commits by their
 identifiers.  You can refer to the _most recent commit_ of the working
 directory by using the identifier `HEAD`.
 
-We've been adding one line at a time to `mars.txt`, so it's easy to track our
+We've been adding one line at a time to `README.md`, so it's easy to track our
 progress by looking, so let's do that using our `HEAD`s.  Before we start,
-let's make a change to `mars.txt`.
+let's make a change to `README.md`.
 
 ~~~
-$ nano mars.txt
-$ cat mars.txt
+$ nano README.md
+$ cat README.md
 ~~~
 {: .bash}
 
 ~~~
-Cold and dry, but everything is my favorite color
-The two svm may be a problem for Alice
-But the Mummy will appreciate the lack of humidity
+We want to classify the digits 0-9 using machine learning
+We will start by training a Support Vector Machine
+And only use Deep Learning if we really need to
 An ill-considered change
 ~~~
 {: .output}
@@ -41,19 +41,19 @@ An ill-considered change
 Now, let's see what we get.
 
 ~~~
-$ git diff HEAD mars.txt
+$ git diff HEAD README.md
 ~~~
 {: .bash}
 
 ~~~
-diff --git a/mars.txt b/mars.txt
+diff --git a/README.md b/README.md
 index b36abfd..0848c8d 100644
---- a/mars.txt
-+++ b/mars.txt
+--- a/README.md
++++ b/README.md
 @@ -1,3 +1,4 @@
- Cold and dry, but everything is my favorite color
- The two svm may be a problem for Alice
- But the Mummy will appreciate the lack of humidity
+ We want to classify the digits 0-9 using machine learning
+ We will start by training a Support Vector Machine
+ And only use Deep Learning if we really need to
 +An ill-considered change.
 ~~~
 {: .output}
@@ -63,7 +63,7 @@ real goodness in all this is when you can refer to previous commits.  We do
 that by adding `~1` to refer to the commit one before `HEAD`.
 
 ~~~
-$ git diff HEAD~1 mars.txt
+$ git diff HEAD~1 README.md
 ~~~
 {: .bash}
 
@@ -72,19 +72,19 @@ again, but with the notation `HEAD~1`, `HEAD~2`, and so on, to refer to them:
 
 
 ~~~
-$ git diff HEAD~2 mars.txt
+$ git diff HEAD~2 README.md
 ~~~
 {: .bash}
 
 ~~~
-diff --git a/mars.txt b/mars.txt
+diff --git a/README.md b/README.md
 index df0654a..b36abfd 100644
---- a/mars.txt
-+++ b/mars.txt
+--- a/README.md
++++ b/README.md
 @@ -1 +1,4 @@
- Cold and dry, but everything is my favorite color
-+The two svm may be a problem for Alice
-+But the Mummy will appreciate the lack of humidity
+ We want to classify the digits 0-9 using machine learning
++We will start by training a Support Vector Machine
++And only use Deep Learning if we really need to
 +An ill-considered change
 ~~~
 {: .output}
@@ -92,7 +92,7 @@ index df0654a..b36abfd 100644
 We could also use `git show` which shows us what changes we made at an older commit as well as the commit message, rather than the _differences_ between a commit and our working directory that we see by using `git diff`.
 
 ~~~
-$ git show HEAD~2 mars.txt
+$ git show HEAD~2 README.md
 ~~~
 {: .bash}
 
@@ -101,15 +101,15 @@ commit 34961b159c27df3b475cfe4415d94a6d1fcd064d
 Author: Bob <bob@github.com>
 Date:   Thu Aug 22 10:07:21 2013 -0400
 
-    Start notes on Mars as a base
+    Inital notes on classification
 
-diff --git a/mars.txt b/mars.txt
+diff --git a/README.md b/README.md
 new file mode 100644
 index 0000000..df0654a
 --- /dev/null
-+++ b/mars.txt
++++ b/README.md
 @@ -0,0 +1 @@
-+Cold and dry, but everything is my favorite color
++We want to classify the digits 0-9 using machine learning
 ~~~
 {: .output}
 
@@ -133,19 +133,19 @@ Our first commit was given the ID
 so let's try this:
 
 ~~~
-$ git diff f22b25e3233b4645dabd0d81e651fe074bd8e73b mars.txt
+$ git diff f22b25e3233b4645dabd0d81e651fe074bd8e73b README.md
 ~~~
 {: .bash}
 
 ~~~
-diff --git a/mars.txt b/mars.txt
+diff --git a/README.md b/README.md
 index df0654a..93a3e13 100644
---- a/mars.txt
-+++ b/mars.txt
+--- a/README.md
++++ b/README.md
 @@ -1 +1,4 @@
- Cold and dry, but everything is my favorite color
-+The two svm may be a problem for Alice
-+But the Mummy will appreciate the lack of humidity
+ We want to classify the digits 0-9 using machine learning
++We will start by training a Support Vector Machine
++And only use Deep Learning if we really need to
 +An ill-considered change
 ~~~
 {: .output}
@@ -155,19 +155,19 @@ but typing out random 40-character strings is annoying,
 so Git lets us use just the first few characters:
 
 ~~~
-$ git diff f22b25e mars.txt
+$ git diff f22b25e README.md
 ~~~
 {: .bash}
 
 ~~~
-diff --git a/mars.txt b/mars.txt
+diff --git a/README.md b/README.md
 index df0654a..93a3e13 100644
---- a/mars.txt
-+++ b/mars.txt
+--- a/README.md
++++ b/README.md
 @@ -1 +1,4 @@
- Cold and dry, but everything is my favorite color
-+The two svm may be a problem for Alice
-+But the Mummy will appreciate the lack of humidity
+ We want to classify the digits 0-9 using machine learning
++We will start by training a Support Vector Machine
++And only use Deep Learning if we really need to
 +An ill-considered change
 ~~~
 {: .output}
@@ -178,8 +178,8 @@ can we restore older versions of things?
 Let's suppose we accidentally overwrite our file:
 
 ~~~
-$ nano mars.txt
-$ cat mars.txt
+$ nano README.md
+$ cat README.md
 ~~~
 {: .bash}
 
@@ -202,7 +202,7 @@ Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git checkout -- <file>..." to discard changes in working directory)
 
-	modified:   mars.txt
+	modified:   README.md
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ~~~
@@ -212,15 +212,15 @@ We can put things back the way they were
 by using `git checkout`:
 
 ~~~
-$ git checkout HEAD mars.txt
-$ cat mars.txt
+$ git checkout HEAD README.md
+$ cat README.md
 ~~~
 {: .bash}
 
 ~~~
-Cold and dry, but everything is my favorite color
-The two svm may be a problem for Alice
-But the Mummy will appreciate the lack of humidity
+We want to classify the digits 0-9 using machine learning
+We will start by training a Support Vector Machine
+And only use Deep Learning if we really need to
 ~~~
 {: .output}
 
@@ -233,17 +233,17 @@ If we want to go back even further,
 we can use a commit identifier instead:
 
 ~~~
-$ git checkout f22b25e mars.txt
+$ git checkout f22b25e README.md
 ~~~
 {: .bash}
 
 ~~~
-$ cat mars.txt
+$ cat README.md
 ~~~
 {: .bash}
 
 ~~~
-Cold and dry, but everything is my favorite color
+We want to classify the digits 0-9 using machine learning
 ~~~
 {: .output}
 
@@ -260,7 +260,7 @@ Changes to be committed:
 #   (use "git add <file>..." to update what will be committed)
 #   (use "git checkout -- <file>..." to discard changes in working directory)
 #
-#	modified:   mars.txt
+#	modified:   README.md
 #
 no changes added to commit (use "git add" and/or "git commit -a")
 ~~~
@@ -271,7 +271,7 @@ Again, we can put things back the way they were
 by using `git checkout`:
 
 ~~~
-$ git checkout HEAD mars.txt
+$ git checkout HEAD README.md
 ~~~
 {: .bash}
 
@@ -280,12 +280,12 @@ $ git checkout HEAD mars.txt
 > Above we used
 >
 > ~~~
-> $ git checkout f22b25e mars.txt
+> $ git checkout f22b25e README.md
 > ~~~
 > {: .bash}
 >
-> to revert `mars.txt` to its state after the commit `f22b25e`.
-> If you forget `mars.txt` in that command, Git will tell you that "You are in
+> to revert `README.md` to its state after the commit `f22b25e`.
+> If you forget `README.md` in that command, Git will tell you that "You are in
 > 'detached HEAD' state." In this state, you shouldn't make any changes.
 > You can fix this by reattaching your head using ``git checkout master``
 {: .callout}
@@ -378,16 +378,16 @@ moving backward and forward in time becomes much easier.
 
 > ## Understanding Workflow and History
 >
-> What is the output of cat venus.txt at the end of this set of commands?
+> What is the output of cat svm/classify.py at the end of this set of commands?
 >
 > ~~~
 > $ cd digits-classifier
-> $ nano venus.txt #input the following text: Venus is beautiful and full of love
-> $ git add venus.txt
-> $ nano venus.txt #add the following text: Venus is too hot to be suitable as a base
+> $ nano svm/classify.py #input the following text: Venus is beautiful and full of love
+> $ git add svm/classify.py
+> $ nano svm/classify.py #add the following text: Venus is too hot to be suitable as a base
 > $ git commit -m "Comment on Venus as an unsuitable base"
-> $ git checkout HEAD venus.txt
-> $ cat venus.txt #this will print the contents of venus.txt to the screen
+> $ git checkout HEAD svm/classify.py
+> $ cat svm/classify.py #this will print the contents of svm/classify.py to the screen
 > ~~~
 > {: .bash}
 >
@@ -416,7 +416,7 @@ moving backward and forward in time becomes much easier.
 > 4.
 >
 > ~~~
-> Error because you have changed venus.txt without committing the changes
+> Error because you have changed svm/classify.py without committing the changes
 > ~~~
 > {: .output}
 >
@@ -430,19 +430,19 @@ moving backward and forward in time becomes much easier.
 > > Enters into the 'digits-classifier' directory
 > >
 > > ~~~
-> > $ nano venus.txt #input the following text: Venus is beautiful and full of love
+> > $ nano svm/classify.py #input the following text: Venus is beautiful and full of love
 > > ~~~
 > > {: .bash}
 > > We created a new file and wrote a sentence in it, but the file is not tracked by git.  
 > >
 > > ~~~
-> > $ git add venus.txt
+> > $ git add svm/classify.py
 > > ~~~
 > > {: .bash}
 > > Now the file is staged. The changes that have been made to the file until now will be committed in the next commit.
 > >
 > > ~~~
-> > $ nano venus.txt #add the following text: Venus is too hot to be suitable as a base
+> > $ nano svm/classify.py #add the following text: Venus is too hot to be suitable as a base
 > > ~~~
 > > {: .bash}
 > > The file has been modified. The new changes are not staged because we have not added the file.
@@ -454,26 +454,26 @@ moving backward and forward in time becomes much easier.
 > > The changes that were staged (Venus is beautiful and full of love) have been committed. The changes that were not staged (Venus is too hot to be suitable as a base) have not. Our local working copy is different than the copy in our local repository.
 > >
 > > ~~~
-> > $ git checkout HEAD venus.txt
+> > $ git checkout HEAD svm/classify.py
 > > ~~~
 > > {: .bash}
 > > With checkout we discard the changes in the working directory so that our local copy is exactly the same as our HEAD, the most recent commit.
 > >
 > > ~~~
-> > $ cat venus.txt #this will print the contents of venus.txt to the screen
+> > $ cat svm/classify.py #this will print the contents of svm/classify.py to the screen
 > > ~~~
 > > {: .bash}
-> > If we print venus.txt we will get answer 2.
+> > If we print svm/classify.py we will get answer 2.
 > >
 > {: .solution}
 {: .challenge}
 
 > ## Checking Understanding of `git diff`
 >
-> Consider this command: `git diff HEAD~3 mars.txt`. What do you predict this command
+> Consider this command: `git diff HEAD~3 README.md`. What do you predict this command
 > will do if you execute it? What happens when you do execute it? Why?
 >
-> Try another command, `git diff [ID] mars.txt`, where [ID] is replaced with
+> Try another command, `git diff [ID] README.md`, where [ID] is replaced with
 > the unique identifier for your most recent commit. What do you think will happen,
 > and what does happen?
 {: .challenge}
@@ -482,7 +482,7 @@ moving backward and forward in time becomes much easier.
 >
 > `git checkout` can be used to restore a previous commit when unstaged changes have
 > been made, but will it also work for changes that have been staged but not committed?
-> Make a change to `mars.txt`, add that change, and use `git checkout` to see if
+> Make a change to `README.md`, add that change, and use `git checkout` to see if
 > you can remove your change.
 {: .challenge}
 
@@ -492,15 +492,15 @@ moving backward and forward in time becomes much easier.
 > the right commit ID, especially if the commit is from several months ago.
 >
 > Imagine the `digits-classifier` project has more than 50 files.
-> You would like to find a commit with specific text in `mars.txt` is modified.
+> You would like to find a commit with specific text in `README.md` is modified.
 > When you type `git log`, a very long list appeared,
 > How can you narrow down the search?
 >
 > Recall that the `git diff` command allow us to explore one specific file,
-> e.g. `git diff mars.txt`. We can apply a similar idea here.
+> e.g. `git diff README.md`. We can apply a similar idea here.
 >
 > ~~~
-> $ git log mars.txt
+> $ git log README.md
 > ~~~
 > {: .bash}
 >
@@ -511,7 +511,7 @@ moving backward and forward in time becomes much easier.
 > Is it possible to combine both? Let's try the following:
 >
 > ~~~
-> $ git log --patch mars.txt
+> $ git log --patch README.md
 > ~~~
 > {: .bash}
 >

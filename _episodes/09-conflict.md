@@ -20,33 +20,33 @@ different changes to each copy.  Version control helps us manage these
 [resolve]({{ page.root }}/reference/#resolve) overlapping changes.
 
 To see how we can resolve conflicts, we must first create one.  The file
-`mars.txt` currently looks like this in both partners' copies of our `digits-classifier`
+`README.md` currently looks like this in both partners' copies of our `digits-classifier`
 repository:
 
 ~~~
-$ cat mars.txt
+$ cat README.md
 ~~~
 {: .bash}
 
 ~~~
-Cold and dry, but everything is my favorite color
-The two svm may be a problem for Alice
-But the Mummy will appreciate the lack of humidity
+We want to classify the digits 0-9 using machine learning
+We will start by training a Support Vector Machine
+And only use Deep Learning if we really need to
 ~~~
 {: .output}
 
 Let's add a line to one partner's copy only:
 
 ~~~
-$ nano mars.txt
-$ cat mars.txt
+$ nano README.md
+$ cat README.md
 ~~~
 {: .bash}
 
 ~~~
-Cold and dry, but everything is my favorite color
-The two svm may be a problem for Alice
-But the Mummy will appreciate the lack of humidity
+We want to classify the digits 0-9 using machine learning
+We will start by training a Support Vector Machine
+And only use Deep Learning if we really need to
 This line added to Alice's copy
 ~~~
 {: .output}
@@ -54,7 +54,7 @@ This line added to Alice's copy
 and then push the change to GitHub:
 
 ~~~
-$ git add mars.txt
+$ git add README.md
 $ git commit -m "Add a line in our home copy"
 ~~~
 {: .bash}
@@ -86,15 +86,15 @@ make a different change to their copy
 *without* updating from GitHub:
 
 ~~~
-$ nano mars.txt
-$ cat mars.txt
+$ nano README.md
+$ cat README.md
 ~~~
 {: .bash}
 
 ~~~
-Cold and dry, but everything is my favorite color
-The two svm may be a problem for Alice
-But the Mummy will appreciate the lack of humidity
+We want to classify the digits 0-9 using machine learning
+We will start by training a Support Vector Machine
+And only use Deep Learning if we really need to
 We added a different line in the other copy
 ~~~
 {: .output}
@@ -102,7 +102,7 @@ We added a different line in the other copy
 We can commit the change locally:
 
 ~~~
-$ git add mars.txt
+$ git add README.md
 $ git commit -m "Add a line in my copy"
 ~~~
 {: .bash}
@@ -152,8 +152,8 @@ remote: Total 3 (delta 1), reused 3 (delta 1)
 Unpacking objects: 100% (3/3), done.
 From https://github.com/bob/digits-classifier
  * branch            master     -> FETCH_HEAD
-Auto-merging mars.txt
-CONFLICT (content): Merge conflict in mars.txt
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
 Automatic merge failed; fix conflicts and then commit the result.
 ~~~
 {: .output}
@@ -162,14 +162,14 @@ Automatic merge failed; fix conflicts and then commit the result.
 and marks that conflict in the affected file:
 
 ~~~
-$ cat mars.txt
+$ cat README.md
 ~~~
 {: .bash}
 
 ~~~
-Cold and dry, but everything is my favorite color
-The two svm may be a problem for Alice
-But the Mummy will appreciate the lack of humidity
+We want to classify the digits 0-9 using machine learning
+We will start by training a Support Vector Machine
+And only use Deep Learning if we really need to
 <<<<<<< HEAD
 We added a different line in the other copy
 =======
@@ -192,24 +192,24 @@ or get rid of the change entirely.
 Let's replace both so that the file looks like this:
 
 ~~~
-$ cat mars.txt
+$ cat README.md
 ~~~
 {: .bash}
 
 ~~~
-Cold and dry, but everything is my favorite color
-The two svm may be a problem for Alice
-But the Mummy will appreciate the lack of humidity
+We want to classify the digits 0-9 using machine learning
+We will start by training a Support Vector Machine
+And only use Deep Learning if we really need to
 We removed the conflict on this line
 ~~~
 {: .output}
 
 To finish merging,
-we add `mars.txt` to the changes being made by the merge
+we add `README.md` to the changes being made by the merge
 and then commit:
 
 ~~~
-$ git add mars.txt
+$ git add README.md
 $ git status
 ~~~
 {: .bash}
@@ -221,7 +221,7 @@ All conflicts fixed but you are still merging.
 
 Changes to be committed:
 
-	modified:   mars.txt
+	modified:   README.md
 
 ~~~
 {: .output}
@@ -272,7 +272,7 @@ From https://github.com/bob/digits-classifier
  * branch            master     -> FETCH_HEAD
 Updating dabb4c8..2abf2b1
 Fast-forward
- mars.txt | 2 +-
+ README.md | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 ~~~
 {: .output}
@@ -280,14 +280,14 @@ Fast-forward
 We get the merged file:
 
 ~~~
-$ cat mars.txt
+$ cat README.md
 ~~~
 {: .bash}
 
 ~~~
-Cold and dry, but everything is my favorite color
-The two svm may be a problem for Alice
-But the Mummy will appreciate the lack of humidity
+We want to classify the digits 0-9 using machine learning
+We will start by training a Support Vector Machine
+And only use Deep Learning if we really need to
 We removed the conflict on this line
 ~~~
 {: .output}
@@ -414,7 +414,7 @@ Conflicts can also be minimized with project management strategies:
 > > ~~~
 > > {: .output}
 > >
-> > The conflict message here is mostly the same as it was for `mars.txt`, but
+> > The conflict message here is mostly the same as it was for `README.md`, but
 > > there is one key additional line:
 > >
 > > ~~~

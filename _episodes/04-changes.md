@@ -33,25 +33,26 @@ $ cd ..
 ~~~
 {: .bash}
 
-Let's create a file called `mars.txt` that contains some notes
-about the Red Planet's suitability as a base.
+It's always a good idea to have a Readme file to let people know what a repo
+is for.
+Let's create a file called `README.md`.
 We'll use `nano` to edit the file;
 you can use whatever editor you like.
 In particular, this does not have to be the `core.editor` you set globally earlier. But remember, the bash command to create or edit a new file will depend on the editor you choose (it might not be `nano`). For a refresher on text editors, check out ["Which Editor?"](https://swcarpentry.github.io/shell-novice/03-create/) in [The Unix Shell](https://swcarpentry.github.io/shell-novice/) lesson.
 
 ~~~
-$ nano mars.txt
+$ nano README.md
 ~~~
 {: .bash}
 
-Type the text below into the `mars.txt` file:
+Type the text below into the `README.md` file:
 
 ~~~
-Cold and dry, but everything is my favorite color
+We want to classify the digits 0-9 using machine learning
 ~~~
 {: .output}
 
-`mars.txt` now contains a single line, which we can see by running:
+`README.md` now contains a single line, which we can see by running:
 
 ~~~
 $ ls
@@ -59,17 +60,17 @@ $ ls
 {: .bash}
 
 ~~~
-mars.txt
+README.md
 ~~~
 {: .output}
 
 ~~~
-$ cat mars.txt
+$ cat README.md
 ~~~
 {: .bash}
 
 ~~~
-Cold and dry, but everything is my favorite color
+We want to classify the digits 0-9 using machine learning
 ~~~
 {: .output}
 
@@ -89,7 +90,7 @@ Initial commit
 Untracked files:
    (use "git add <file>..." to include in what will be committed)
 
-	mars.txt
+	README.md
 nothing added to commit but untracked files present (use "git add" to track)
 ~~~
 {: .output}
@@ -99,7 +100,7 @@ that Git isn't keeping track of.
 We can tell Git to track a file using `git add`:
 
 ~~~
-$ git add mars.txt
+$ git add README.md
 ~~~
 {: .bash}
 
@@ -118,25 +119,25 @@ Initial commit
 Changes to be committed:
   (use "git rm --cached <file>..." to unstage)
 
-	new file:   mars.txt
+	new file:   README.md
 
 ~~~
 {: .output}
 
-Git now knows that it's supposed to keep track of `mars.txt`,
+Git now knows that it's supposed to keep track of `README.md`,
 but it hasn't recorded these changes as a commit yet.
 To get it to do that,
 we need to run one more command:
 
 ~~~
-$ git commit -m "Start notes on Mars as a base"
+$ git commit -m "Inital notes on classification"
 ~~~
 {: .bash}
 
 ~~~
-[master (root-commit) f22b25e] Start notes on Mars as a base
+[master (root-commit) f22b25e] Inital notes on classification
  1 file changed, 1 insertion(+)
- create mode 100644 mars.txt
+ create mode 100644 README.md
 ~~~
 {: .output}
 
@@ -184,7 +185,7 @@ commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
 Author: Bob <bob@github.com>
 Date:   Thu Aug 22 09:51:46 2013 -0400
 
-    Start notes on Mars as a base
+    Inital notes on classification
 ~~~
 {: .output}
 
@@ -199,7 +200,7 @@ and the log message Git was given when the commit was created.
 
 > ## Where Are My Changes?
 >
-> If we run `ls` at this point, we will still see just one file called `mars.txt`.
+> If we run `ls` at this point, we will still see just one file called `README.md`.
 > That's because Git saves information about files' history
 > in the special `.git` directory mentioned earlier
 > so that our filesystem doesn't become cluttered
@@ -211,14 +212,14 @@ Now suppose Bob adds more information to the file.
 you may use a different editor, and don't need to `cat`.)
 
 ~~~
-$ nano mars.txt
-$ cat mars.txt
+$ nano README.md
+$ cat README.md
 ~~~
 {: .bash}
 
 ~~~
-Cold and dry, but everything is my favorite color
-The two svm may be a problem for Alice
+We want to classify the digits 0-9 using machine learning
+We will start by training a Support Vector Machine
 ~~~
 {: .output}
 
@@ -236,7 +237,7 @@ Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git checkout -- <file>..." to discard changes in working directory)
 
-	modified:   mars.txt
+	modified:   README.md
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ~~~
@@ -259,13 +260,13 @@ $ git diff
 {: .bash}
 
 ~~~
-diff --git a/mars.txt b/mars.txt
+diff --git a/README.md b/README.md
 index df0654a..315bf3a 100644
---- a/mars.txt
-+++ b/mars.txt
+--- a/README.md
++++ b/README.md
 @@ -1 +1,2 @@
- Cold and dry, but everything is my favorite color
-+The two svm may be a problem for Alice
+ We want to classify the digits 0-9 using machine learning
++We will start by training a Support Vector Machine
 ~~~
 {: .output}
 
@@ -288,7 +289,7 @@ If we break it down into pieces:
 After reviewing our change, it's time to commit it:
 
 ~~~
-$ git commit -m "Add concerns about effects of Mars' svm on Alice"
+$ git commit -m "Adds information on methods"
 $ git status
 ~~~
 {: .bash}
@@ -299,7 +300,7 @@ Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git checkout -- <file>..." to discard changes in working directory)
 
-	modified:   mars.txt
+	modified:   README.md
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ~~~
@@ -310,13 +311,13 @@ Git won't commit because we didn't use `git add` first.
 Let's fix that:
 
 ~~~
-$ git add mars.txt
-$ git commit -m "Add concerns about effects of Mars' svm on Alice"
+$ git add README.md
+$ git commit -m "Adds information on methods"
 ~~~
 {: .bash}
 
 ~~~
-[master 34961b1] Add concerns about effects of Mars' svm on Alice
+[master 34961b1] Adds information on methods
  1 file changed, 1 insertion(+)
 ~~~
 {: .output}
@@ -367,15 +368,15 @@ First,
 we'll add another line to the file:
 
 ~~~
-$ nano mars.txt
-$ cat mars.txt
+$ nano README.md
+$ cat README.md
 ~~~
 {: .bash}
 
 ~~~
-Cold and dry, but everything is my favorite color
-The two svm may be a problem for Alice
-But the Mummy will appreciate the lack of humidity
+We want to classify the digits 0-9 using machine learning
+We will start by training a Support Vector Machine
+And only use Deep Learning if we really need to
 ~~~
 {: .output}
 
@@ -385,14 +386,14 @@ $ git diff
 {: .bash}
 
 ~~~
-diff --git a/mars.txt b/mars.txt
+diff --git a/README.md b/README.md
 index 315bf3a..b36abfd 100644
---- a/mars.txt
-+++ b/mars.txt
+--- a/README.md
++++ b/README.md
 @@ -1,2 +1,3 @@
- Cold and dry, but everything is my favorite color
- The two svm may be a problem for Alice
-+But the Mummy will appreciate the lack of humidity
+ We want to classify the digits 0-9 using machine learning
+ We will start by training a Support Vector Machine
++And only use Deep Learning if we really need to
 ~~~
 {: .output}
 
@@ -403,7 +404,7 @@ Now let's put that change in the staging area
 and see what `git diff` reports:
 
 ~~~
-$ git add mars.txt
+$ git add README.md
 $ git diff
 ~~~
 {: .bash}
@@ -421,14 +422,14 @@ $ git diff --staged
 {: .bash}
 
 ~~~
-diff --git a/mars.txt b/mars.txt
+diff --git a/README.md b/README.md
 index 315bf3a..b36abfd 100644
---- a/mars.txt
-+++ b/mars.txt
+--- a/README.md
++++ b/README.md
 @@ -1,2 +1,3 @@
- Cold and dry, but everything is my favorite color
- The two svm may be a problem for Alice
-+But the Mummy will appreciate the lack of humidity
+ We want to classify the digits 0-9 using machine learning
+ We will start by training a Support Vector Machine
++And only use Deep Learning if we really need to
 ~~~
 {: .output}
 
@@ -438,12 +439,12 @@ and what's in the staging area.
 Let's save our changes:
 
 ~~~
-$ git commit -m "Discuss concerns about Mars' climate for Mummy"
+$ git commit -m "Added Deep Learning info"
 ~~~
 {: .bash}
 
 ~~~
-[master 005937f] Discuss concerns about Mars' climate for Mummy
+[master 005937f] Added Deep Learning info
  1 file changed, 1 insertion(+)
 ~~~
 {: .output}
@@ -473,19 +474,19 @@ commit 005937fbe2a98fb83f0ade869025dc2636b4dad5
 Author: Bob <bob@github.com>
 Date:   Thu Aug 22 10:14:07 2013 -0400
 
-    Discuss concerns about Mars' climate for Mummy
+    Added Deep Learning info
 
 commit 34961b159c27df3b475cfe4415d94a6d1fcd064d
 Author: Bob <bob@github.com>
 Date:   Thu Aug 22 10:07:21 2013 -0400
 
-    Add concerns about effects of Mars' svm on Alice
+    Adds information on methods
 
 commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
 Author: Bob <bob@github.com>
 Date:   Thu Aug 22 09:51:46 2013 -0400
 
-    Start notes on Mars as a base
+    Inital notes on classification
 ~~~
 {: .output}
 
@@ -527,7 +528,7 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 > Author: Bob <bob@github.com>
 > Date:   Thu Aug 22 10:14:07 2013 -0400
 >
->    Discuss concerns about Mars' climate for Mummy
+>    Added Deep Learning info
 > ~~~
 > {: .output}
 >
@@ -539,9 +540,9 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 > ~~~
 > {: .bash}
 > ~~~
-> * 005937f Discuss concerns about Mars' climate for Mummy
-> * 34961b1 Add concerns about effects of Mars' svm on Alice
-> * f22b25e Start notes on Mars as a base
+> * 005937f Added Deep Learning info
+> * 34961b1 Adds information on methods
+> * f22b25e Inital notes on classification
 > ~~~
 > {: .output}
 >
@@ -553,9 +554,9 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 > ~~~
 > {: .bash}
 > ~~~
-> * 005937f Discuss concerns about Mars' climate for Mummy (HEAD, master)
-> * 34961b1 Add concerns about effects of Mars' svm on Alice
-> * f22b25e Start notes on Mars as a base
+> * 005937f Added Deep Learning info (HEAD, master)
+> * 34961b1 Adds information on methods
+> * f22b25e Inital notes on classification
 > ~~~
 > {: .output}
 {: .callout}
@@ -603,11 +604,11 @@ repository (`git commit`):
 > ## Choosing a Commit Message
 >
 > Which of the following commit messages would be most appropriate for the
-> last commit made to `mars.txt`?
+> last commit made to `README.md`?
 >
 > 1. "Changes"
-> 2. "Added line 'But the Mummy will appreciate the lack of humidity' to mars.txt"
-> 3. "Discuss effects of Mars' climate on the Mummy"
+> 2. "Added line 'And only use Deep Learning if we really need to' to README.md"
+> 3. "Added Deep Learning info to README.md"
 >
 > > ## Solution
 > > Answer 1 is not descriptive enough,
@@ -645,56 +646,55 @@ repository (`git commit`):
 > The staging area can hold changes from any number of files
 > that you want to commit as a single snapshot.
 >
-> 1. Add some text to `mars.txt` noting your decision
-> to consider Venus as a base
-> 2. Create a new file `venus.txt` with your initial thoughts
-> about Venus as a base for you and your friends
+> 1. Add some text to `README.md` adding that the implementation will be
+> done in `svm/classify.py`
+> 2. Create a new file `svm/classify.py` and add the line `import sklearn`
 > 3. Add changes from both files to the staging area,
 > and commit those changes.
 >
 > > ## Solution
 > >
-> > First we make our changes to the `mars.txt` and `venus.txt` files:
+> > First we make our changes to the `README.md` and `svm/classify.py` files:
 > > ~~~
-> > $ nano mars.txt
-> > $ cat mars.txt
+> > $ nano README.md
+> > $ cat README.md
 > > ~~~
 > > {: .bash}
 > > ~~~
-> > Maybe I should start with a base on Venus.
+> > The implementation will be done in svm/classify.py.
 > > ~~~
 > > {: .output}
 > > ~~~
-> > $ nano venus.txt
-> > $ cat venus.txt
+> > $ nano svm/classify.py
+> > $ cat svm/classify.py
 > > ~~~
 > > {: .bash}
 > > ~~~
-> > Venus is a nice planet and I definitely should consider it as a base.
+> > import sklearn
 > > ~~~
 > > {: .output}
 > > Now you can add both files to the staging area. We can do that in one line:
 > >
 > > ~~~
-> > $ git add mars.txt venus.txt
+> > $ git add README.md svm/classify.py
 > > ~~~
 > > {: .bash}
 > > Or with multiple commands:
 > > ~~~
-> > $ git add mars.txt
-> > $ git add venus.txt
+> > $ git add README.md
+> > $ git add svm/classify.py
 > > ~~~
 > > {: .bash}
 > > Now the files are ready to commit. You can check that using `git status`. If you are ready to commit use:
 > > ~~~
-> > $ git commit -m "Write plans to start a base on Venus"
+> > $ git commit -m "Added initial svm code"
 > > ~~~
 > > {: .bash}
 > > ~~~
 > > [master cc127c2]
-> >  Write plans to start a base on Venus
+> >  Added initial svm code
 > >  2 files changed, 2 insertions(+)
-> >  create mode 100644 venus.txt
+> >  create mode 100644 svm/classify.py
 > > ~~~
 > > {: .output}
 > {: .solution}
@@ -728,17 +728,17 @@ repository (`git commit`):
 > >
 > > ~~~
 > > $ git add me.txt
-> > $ git commit -m "Update Bob's bio." --author="Frank N. Stein <franky@monster.com>"
+> > $ git commit -m "Update Bob's bio." --author="Alice <alice@github.com>"
 > > ~~~
 > > {: .bash}
 > > ~~~
 > > [master 4162a51] Update Bob's bio.
-> > Author: Frank N. Stein <franky@monster.com>
+> > Author: Alice <alice@github.com>
 > > 1 file changed, 2 insertions(+), 2 deletions(-)
 > >
 > > $ git log --format=full
 > > commit 4162a51b273ba799a9d395dd70c45d96dba4e2ff
-> > Author: Frank N. Stein <franky@monster.com>
+> > Author: Alice <alice@github.com>
 > > Commit: Bob <bob@github.com>
 > >
 > > Update Bob's bio.

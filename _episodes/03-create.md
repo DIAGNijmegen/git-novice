@@ -130,7 +130,7 @@ nothing to commit (create/copy files and use "git add" to track)
 > > Note that we can track files in directories within a Git:
 > >
 > > ~~~
-> > $ touch svm.py                  # create svm files
+> > $ touch svm/classify.py         # create svm files
 > > $ cd ..                         # return to digits-classifier directory
 > > $ ls svm                        # list contents of the svm directory
 > > $ git add svm/*                 # add all contents of digits-classifier/svm
