@@ -41,3 +41,14 @@ when memory has faded).
 > Some previous experience with the shell is expected,
 > *but isn't mandatory*.
 {: .prereq}
+
+## Git is not Github
+
+It's important to note that git and github are not the same thing. Git is
+the version control system, that stores history is a repository. Github
+is a website that hosts git repositories. 
+
+In this workshop we will use git on your local machine first to create a 
+toy experiment, where Alice and Bob will collaborate on creating a Support
+Vector Machine to classify digits (like MNIST). We'll
+ then learn how we can store this repo on github.
