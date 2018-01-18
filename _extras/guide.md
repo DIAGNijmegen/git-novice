@@ -210,7 +210,7 @@ particular set of files in `.gitignore`.
     computer at work:
 
     ~~~
-    $ git clone https://github.com/vlad/planets.git planets-at-work
+    $ git clone https://github.com/bob/digits-classifier.git planets-at-work
     ~~~
     {: .bash}
 
@@ -228,7 +228,7 @@ particular set of files in `.gitignore`.
     repo under a given directory using a second argument:
 
     ~~~
-    $ git clone https://github.com/vlad/planets.git vlad-planet
+    $ git clone https://github.com/bob/digits-classifier.git vlad-planet
     ~~~
     {: .bash}
 
@@ -246,7 +246,7 @@ particular set of files in `.gitignore`.
 *   If you're the only instructor, the best way to create a conflict is:
 
     *   Clone your repo in a different directory, pretending is your computer at
-        work: `git clone https://github.com/vlad/planets.git planets-at-work`.
+        work: `git clone https://github.com/bob/digits-classifier.git planets-at-work`.
     *   At the office, you make a change, commit and push.
     *   At your laptop repo, you (forget to pull and) make a change, commit and
         try to push.

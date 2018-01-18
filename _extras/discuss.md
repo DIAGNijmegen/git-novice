@@ -170,7 +170,7 @@ Then make the same changes to `mars.doc` that we (or Vlad) previously made to `m
 
 ~~~
 Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
+The two moons may be a problem for Alice
 ~~~
 {: .output}
 
@@ -198,7 +198,7 @@ index df0654a..315bf3a 100644
 +++ b/mars.txt
 @@ -1 +1,2 @@
  Cold and dry, but everything is my favorite color
-+The two moons may be a problem for Wolfman
++The two moons may be a problem for Alice
 ~~~
 {: .output}
 
