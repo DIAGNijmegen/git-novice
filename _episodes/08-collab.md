@@ -52,25 +52,25 @@ exactly the same way as we've been doing before:
 
 ~~~
 $ cd ~/Desktop/bob-digits-classifier
-$ nano pluto.txt
-$ cat pluto.txt
+$ nano svm/classify.py
+$ cat svm/classify.py
 ~~~
 {: .bash}
 
 ~~~
-It is so a planet!
+from sklearn import datasets
+digits = datasets.load_digits()
 ~~~
 {: .output}
 
 ~~~
-$ git add pluto.txt
-$ git commit -m "Add notes about Pluto"
+$ git commit -am "Loads the data"
 ~~~
 {: .bash}
 
 ~~~
  1 file changed, 1 insertion(+)
- create mode 100644 pluto.txt
+ create mode 100644 svm/classify.py
 ~~~
 {: .output}
 
@@ -116,9 +116,9 @@ From https://github.com/bob/digits-classifier
  * branch            master     -> FETCH_HEAD
 Updating 9272da5..29aba7c
 Fast-forward
- pluto.txt | 1 +
+ svm/classify.py | 2 +
  1 file changed, 1 insertion(+)
- create mode 100644 pluto.txt
+ create mode 100644 svm/classify.py
 ~~~
 {: .output}
 
