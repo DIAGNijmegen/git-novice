@@ -65,28 +65,29 @@ If you are using a different version of git than I am, then then the exact
 wording of the output might be slightly different.
 
 ~~~
-# On branch master
-#
-# Initial commit
-#
+On branch master
+
+Initial commit
+
 nothing to commit (create/copy files and use "git add" to track)
 ~~~
 {: .output}
 
 > ## Places to Create Git Repositories
 >
-> Bob starts a new project, `svm`, related to his `digits-classifier` project.
+> Bob starts a new project to work on a Support Vector Machine, `svm`, 
+> for his `digits-classifier` project.
 > Despite Alice's concerns, he enters the following sequence of commands to
 > create one Git repository inside another:
 >
 > ~~~
-> $ cd             # return to home directory
+> $ cd                       # return to home directory
 > $ mkdir digits-classifier  # make a new directory digits-classifier
 > $ cd digits-classifier     # go into digits-classifier
-> $ git init       # make the digits-classifier directory a Git repository
-> $ mkdir svm    # make a sub-directory digits-classifier/svm
-> $ cd svm       # go into digits-classifier/svm
-> $ git init       # make the svm sub-directory a Git repository
+> $ git init                 # make the digits-classifier directory a Git repository
+> $ mkdir svm                # make a sub-directory digits-classifier/svm
+> $ cd svm                   # go into digits-classifier/svm
+> $ git init                 # make the svm sub-directory a Git repository
 > ~~~
 > {: .bash}
 >
@@ -98,7 +99,21 @@ nothing to commit (create/copy files and use "git add" to track)
 > > Git repositories can interfere with each other if they are "nested" in the
 > > directory of another: the outer repository will try to version-control
 > > the inner repository. Therefore, it's best to create each new Git
-> > repository in a separate directory. To be sure that there is no conflicting
+> > repository in a separate directory. 
+> >
+> > To recover from this little mistake, Bob can just remove the `.git`
+> > folder in the svm subdirectory. To do so he can run the following command from inside the `digits-classifier` directory:
+> >
+> > ~~~
+> > $ rm -rf svm/.git
+> > ~~~
+> > {: .bash}
+> >
+> > But be careful! Running this command in the wrong directory, will remove
+> > the entire git-history of a project you might wanted to keep. Therefore, always check your current directory using the
+> > command `pwd`.
+> >
+> > To be sure that there is no conflicting
 > > repository in the directory, check the output of `git status`. If it looks
 > > like the following, you are good to go to create a new repository as shown
 > > above:
@@ -115,12 +130,12 @@ nothing to commit (create/copy files and use "git add" to track)
 > > Note that we can track files in directories within a Git:
 > >
 > > ~~~
-> > $ touch svm phobos deimos titan    # create svm files
-> > $ cd ..                             # return to digits-classifier directory
-> > $ ls svm                          # list contents of the svm directory
-> > $ git add svm/*                   # add all contents of digits-classifier/svm
-> > $ git status                        # show svm files in staging area
-> > $ git commit -m "add svm files"    # commit digits-classifier/svm to digits-classifier Git repository
+> > $ touch svm.py                  # create svm files
+> > $ cd ..                         # return to digits-classifier directory
+> > $ ls svm                        # list contents of the svm directory
+> > $ git add svm/*                 # add all contents of digits-classifier/svm
+> > $ git status                    # show svm files in staging area
+> > $ git commit -m "add svm files" # commit digits-classifier/svm to digits-classifier Git repository
 > > ~~~
 > > {: .bash}
 > >
@@ -137,16 +152,5 @@ nothing to commit (create/copy files and use "git add" to track)
 > > ~~~
 > > {: .output}
 > >
-> > To recover from this little mistake, Bob can just remove the `.git`
-> > folder in the svm subdirectory. To do so he can run the following command from inside the 'svm' directory:
-> >
-> > ~~~
-> > $ rm -rf svm/.git
-> > ~~~
-> > {: .bash}
-> >
-> > But be careful! Running this command in the wrong directory, will remove
-> > the entire git-history of a project you might wanted to keep. Therefore, always check your current directory using the
-> > command `pwd`.
 > {: .solution}
 {: .challenge}
