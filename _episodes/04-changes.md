@@ -19,14 +19,14 @@ keypoints:
 ---
 
 First let's make sure we're still in the right directory.
-You should be in the `planets` directory.
+You should be in the `digits-classifier` directory.
 
 ~~~
 $ pwd
 ~~~
 {: .bash}
 
-If you are still in `moons` navigate back up to `planets`
+If you are still in `svm` navigate back up to `digits-classifier`
 
 ~~~
 $ cd ..
@@ -218,7 +218,7 @@ $ cat mars.txt
 
 ~~~
 Cold and dry, but everything is my favorite color
-The two moons may be a problem for Alice
+The two svm may be a problem for Alice
 ~~~
 {: .output}
 
@@ -265,7 +265,7 @@ index df0654a..315bf3a 100644
 +++ b/mars.txt
 @@ -1 +1,2 @@
  Cold and dry, but everything is my favorite color
-+The two moons may be a problem for Alice
++The two svm may be a problem for Alice
 ~~~
 {: .output}
 
@@ -288,7 +288,7 @@ If we break it down into pieces:
 After reviewing our change, it's time to commit it:
 
 ~~~
-$ git commit -m "Add concerns about effects of Mars' moons on Alice"
+$ git commit -m "Add concerns about effects of Mars' svm on Alice"
 $ git status
 ~~~
 {: .bash}
@@ -311,12 +311,12 @@ Let's fix that:
 
 ~~~
 $ git add mars.txt
-$ git commit -m "Add concerns about effects of Mars' moons on Alice"
+$ git commit -m "Add concerns about effects of Mars' svm on Alice"
 ~~~
 {: .bash}
 
 ~~~
-[master 34961b1] Add concerns about effects of Mars' moons on Alice
+[master 34961b1] Add concerns about effects of Mars' svm on Alice
  1 file changed, 1 insertion(+)
 ~~~
 {: .output}
@@ -374,7 +374,7 @@ $ cat mars.txt
 
 ~~~
 Cold and dry, but everything is my favorite color
-The two moons may be a problem for Alice
+The two svm may be a problem for Alice
 But the Mummy will appreciate the lack of humidity
 ~~~
 {: .output}
@@ -391,7 +391,7 @@ index 315bf3a..b36abfd 100644
 +++ b/mars.txt
 @@ -1,2 +1,3 @@
  Cold and dry, but everything is my favorite color
- The two moons may be a problem for Alice
+ The two svm may be a problem for Alice
 +But the Mummy will appreciate the lack of humidity
 ~~~
 {: .output}
@@ -427,7 +427,7 @@ index 315bf3a..b36abfd 100644
 +++ b/mars.txt
 @@ -1,2 +1,3 @@
  Cold and dry, but everything is my favorite color
- The two moons may be a problem for Alice
+ The two svm may be a problem for Alice
 +But the Mummy will appreciate the lack of humidity
 ~~~
 {: .output}
@@ -479,7 +479,7 @@ commit 34961b159c27df3b475cfe4415d94a6d1fcd064d
 Author: Bob <bob@github.com>
 Date:   Thu Aug 22 10:07:21 2013 -0400
 
-    Add concerns about effects of Mars' moons on Alice
+    Add concerns about effects of Mars' svm on Alice
 
 commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
 Author: Bob <bob@github.com>
@@ -540,7 +540,7 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 > {: .bash}
 > ~~~
 > * 005937f Discuss concerns about Mars' climate for Mummy
-> * 34961b1 Add concerns about effects of Mars' moons on Alice
+> * 34961b1 Add concerns about effects of Mars' svm on Alice
 > * f22b25e Start notes on Mars as a base
 > ~~~
 > {: .output}
@@ -554,7 +554,7 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 > {: .bash}
 > ~~~
 > * 005937f Discuss concerns about Mars' climate for Mummy (HEAD, master)
-> * 34961b1 Add concerns about effects of Mars' moons on Alice
+> * 34961b1 Add concerns about effects of Mars' svm on Alice
 > * f22b25e Start notes on Mars as a base
 > ~~~
 > {: .output}

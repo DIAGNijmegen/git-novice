@@ -20,7 +20,7 @@ different changes to each copy.  Version control helps us manage these
 [resolve]({{ page.root }}/reference/#resolve) overlapping changes.
 
 To see how we can resolve conflicts, we must first create one.  The file
-`mars.txt` currently looks like this in both partners' copies of our `planets`
+`mars.txt` currently looks like this in both partners' copies of our `digits-classifier`
 repository:
 
 ~~~
@@ -30,7 +30,7 @@ $ cat mars.txt
 
 ~~~
 Cold and dry, but everything is my favorite color
-The two moons may be a problem for Alice
+The two svm may be a problem for Alice
 But the Mummy will appreciate the lack of humidity
 ~~~
 {: .output}
@@ -45,7 +45,7 @@ $ cat mars.txt
 
 ~~~
 Cold and dry, but everything is my favorite color
-The two moons may be a problem for Alice
+The two svm may be a problem for Alice
 But the Mummy will appreciate the lack of humidity
 This line added to Alice's copy
 ~~~
@@ -76,7 +76,7 @@ Delta compression using up to 4 threads.
 Compressing objects: 100% (3/3), done.
 Writing objects: 100% (3/3), 352 bytes, done.
 Total 3 (delta 1), reused 0 (delta 0)
-To https://github.com/bob/planets
+To https://github.com/bob/digits-classifier
    29aba7c..dabb4c8  master -> master
 ~~~
 {: .output}
@@ -93,7 +93,7 @@ $ cat mars.txt
 
 ~~~
 Cold and dry, but everything is my favorite color
-The two moons may be a problem for Alice
+The two svm may be a problem for Alice
 But the Mummy will appreciate the lack of humidity
 We added a different line in the other copy
 ~~~
@@ -121,9 +121,9 @@ $ git push origin master
 {: .bash}
 
 ~~~
-To https://github.com/bob/planets.git
+To https://github.com/bob/digits-classifier.git
  ! [rejected]        master -> master (non-fast-forward)
-error: failed to push some refs to 'https://github.com/bob/planets.git'
+error: failed to push some refs to 'https://github.com/bob/digits-classifier.git'
 hint: Updates were rejected because the tip of your current branch is behind
 hint: its remote counterpart. Merge the remote changes (e.g. 'git pull')
 hint: before pushing again.
@@ -150,7 +150,7 @@ remote: Counting objects: 5, done.
 remote: Compressing objects: 100% (2/2), done.
 remote: Total 3 (delta 1), reused 3 (delta 1)
 Unpacking objects: 100% (3/3), done.
-From https://github.com/bob/planets
+From https://github.com/bob/digits-classifier
  * branch            master     -> FETCH_HEAD
 Auto-merging mars.txt
 CONFLICT (content): Merge conflict in mars.txt
@@ -168,7 +168,7 @@ $ cat mars.txt
 
 ~~~
 Cold and dry, but everything is my favorite color
-The two moons may be a problem for Alice
+The two svm may be a problem for Alice
 But the Mummy will appreciate the lack of humidity
 <<<<<<< HEAD
 We added a different line in the other copy
@@ -198,7 +198,7 @@ $ cat mars.txt
 
 ~~~
 Cold and dry, but everything is my favorite color
-The two moons may be a problem for Alice
+The two svm may be a problem for Alice
 But the Mummy will appreciate the lack of humidity
 We removed the conflict on this line
 ~~~
@@ -249,7 +249,7 @@ Delta compression using up to 4 threads.
 Compressing objects: 100% (6/6), done.
 Writing objects: 100% (6/6), 697 bytes, done.
 Total 6 (delta 2), reused 0 (delta 0)
-To https://github.com/bob/planets.git
+To https://github.com/bob/digits-classifier.git
    dabb4c8..2abf2b1  master -> master
 ~~~
 {: .output}
@@ -268,7 +268,7 @@ remote: Counting objects: 10, done.
 remote: Compressing objects: 100% (4/4), done.
 remote: Total 6 (delta 2), reused 6 (delta 2)
 Unpacking objects: 100% (6/6), done.
-From https://github.com/bob/planets
+From https://github.com/bob/digits-classifier
  * branch            master     -> FETCH_HEAD
 Updating dabb4c8..2abf2b1
 Fast-forward
@@ -286,7 +286,7 @@ $ cat mars.txt
 
 ~~~
 Cold and dry, but everything is my favorite color
-The two moons may be a problem for Alice
+The two svm may be a problem for Alice
 But the Mummy will appreciate the lack of humidity
 We removed the conflict on this line
 ~~~
@@ -377,9 +377,9 @@ Conflicts can also be minimized with project management strategies:
 > > {: .bash}
 > >
 > > ~~~
-> > To https://github.com/bob/planets.git
+> > To https://github.com/bob/digits-classifier.git
 > >  ! [rejected]        master -> master (fetch first)
-> > error: failed to push some refs to 'https://github.com/bob/planets.git'
+> > error: failed to push some refs to 'https://github.com/bob/digits-classifier.git'
 > > hint: Updates were rejected because the remote contains work that you do
 > > hint: not have locally. This is usually caused by another repository pushing
 > > hint: to the same ref. You may want to first integrate the remote changes
@@ -404,7 +404,7 @@ Conflicts can also be minimized with project management strategies:
 > > remote: Compressing objects: 100% (3/3), done.
 > > remote: Total 3 (delta 0), reused 0 (delta 0)
 > > Unpacking objects: 100% (3/3), done.
-> > From https://github.com/bob/planets.git
+> > From https://github.com/bob/digits-classifier.git
 > >  * branch            master     -> FETCH_HEAD
 > >    6a67967..439dc8c  master     -> origin/master
 > > warning: Cannot merge binary files: mars.jpg (HEAD vs. 439dc8c08869c342438f6dc4a2b615b05b93c76e)

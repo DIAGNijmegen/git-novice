@@ -27,11 +27,11 @@ and cons of this in the final section of this lesson.
 
 Let's start by sharing the changes we've made to our current project with the
 world.  Log in to GitHub, then click on the icon in the top right corner to
-create a new repository called `planets`:
+create a new repository called `digits-classifier`:
 
 ![Creating a Repository on GitHub (Step 1)](../fig/github-create-repo-01.png)
 
-Name your repository "planets" and then click "Create Repository":
+Name your repository "digits-classifier" and then click "Create Repository":
 
 ![Creating a Repository on GitHub (Step 2)](../fig/github-create-repo-02.png)
 
@@ -43,8 +43,8 @@ information on how to configure your local repository:
 This effectively does the following on GitHub's servers:
 
 ~~~
-$ mkdir planets
-$ cd planets
+$ mkdir digits-classifier
+$ cd digits-classifier
 $ git init
 ~~~
 {: .bash}
@@ -77,11 +77,11 @@ SSH to HTTPS.
 
 ![Changing the Repository URL on GitHub](../fig/github-change-repo-string.png)
 
-Copy that URL from the browser, go into the local `planets` repository, and run
+Copy that URL from the browser, go into the local `digits-classifier` repository, and run
 this command:
 
 ~~~
-$ git remote add origin https://github.com/bob/planets.git
+$ git remote add origin https://github.com/bob/digits-classifier.git
 ~~~
 {: .bash}
 
@@ -96,8 +96,8 @@ $ git remote -v
 {: .bash}
 
 ~~~
-origin   https://github.com/bob/planets.git (push)
-origin   https://github.com/bob/planets.git (fetch)
+origin   https://github.com/bob/digits-classifier.git (push)
+origin   https://github.com/bob/digits-classifier.git (fetch)
 ~~~
 {: .output}
 
@@ -118,7 +118,7 @@ Delta compression using up to 4 threads.
 Compressing objects: 100% (6/6), done.
 Writing objects: 100% (9/9), 821 bytes, done.
 Total 9 (delta 2), reused 0 (delta 0)
-To https://github.com/bob/planets
+To https://github.com/bob/digits-classifier
  * [new branch]      master -> master
 Branch master set up to track remote branch master from origin.
 ~~~
@@ -190,7 +190,7 @@ $ git pull origin master
 {: .bash}
 
 ~~~
-From https://github.com/bob/planets
+From https://github.com/bob/digits-classifier
  * branch            master     -> FETCH_HEAD
 Already up-to-date.
 ~~~
@@ -202,7 +202,7 @@ GitHub, though, this command would download them to our local repository.
 
 > ## GitHub GUI
 >
-> Browse to your `planets` repository on GitHub.
+> Browse to your `digits-classifier` repository on GitHub.
 > Under the Code tab, find and click on the text that says "XX commits" (where "XX" is some number).
 > Hover over, and click on, the three buttons to the right of each commit.
 > What information can you gather/explore from these buttons?

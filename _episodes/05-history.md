@@ -32,7 +32,7 @@ $ cat mars.txt
 
 ~~~
 Cold and dry, but everything is my favorite color
-The two moons may be a problem for Alice
+The two svm may be a problem for Alice
 But the Mummy will appreciate the lack of humidity
 An ill-considered change
 ~~~
@@ -52,7 +52,7 @@ index b36abfd..0848c8d 100644
 +++ b/mars.txt
 @@ -1,3 +1,4 @@
  Cold and dry, but everything is my favorite color
- The two moons may be a problem for Alice
+ The two svm may be a problem for Alice
  But the Mummy will appreciate the lack of humidity
 +An ill-considered change.
 ~~~
@@ -83,7 +83,7 @@ index df0654a..b36abfd 100644
 +++ b/mars.txt
 @@ -1 +1,4 @@
  Cold and dry, but everything is my favorite color
-+The two moons may be a problem for Alice
++The two svm may be a problem for Alice
 +But the Mummy will appreciate the lack of humidity
 +An ill-considered change
 ~~~
@@ -144,7 +144,7 @@ index df0654a..93a3e13 100644
 +++ b/mars.txt
 @@ -1 +1,4 @@
  Cold and dry, but everything is my favorite color
-+The two moons may be a problem for Alice
++The two svm may be a problem for Alice
 +But the Mummy will appreciate the lack of humidity
 +An ill-considered change
 ~~~
@@ -166,7 +166,7 @@ index df0654a..93a3e13 100644
 +++ b/mars.txt
 @@ -1 +1,4 @@
  Cold and dry, but everything is my favorite color
-+The two moons may be a problem for Alice
++The two svm may be a problem for Alice
 +But the Mummy will appreciate the lack of humidity
 +An ill-considered change
 ~~~
@@ -219,7 +219,7 @@ $ cat mars.txt
 
 ~~~
 Cold and dry, but everything is my favorite color
-The two moons may be a problem for Alice
+The two svm may be a problem for Alice
 But the Mummy will appreciate the lack of humidity
 ~~~
 {: .output}
@@ -381,7 +381,7 @@ moving backward and forward in time becomes much easier.
 > What is the output of cat venus.txt at the end of this set of commands?
 >
 > ~~~
-> $ cd planets
+> $ cd digits-classifier
 > $ nano venus.txt #input the following text: Venus is beautiful and full of love
 > $ git add venus.txt
 > $ nano venus.txt #add the following text: Venus is too hot to be suitable as a base
@@ -424,10 +424,10 @@ moving backward and forward in time becomes much easier.
 > >
 > > Line by line:
 > > ~~~
-> > $ cd planets
+> > $ cd digits-classifier
 > > ~~~
 > > {: .bash}
-> > Enters into the 'planets' directory
+> > Enters into the 'digits-classifier' directory
 > >
 > > ~~~
 > > $ nano venus.txt #input the following text: Venus is beautiful and full of love
@@ -491,7 +491,7 @@ moving backward and forward in time becomes much easier.
 > Exploring history is an important part of git, often it is a challenge to find
 > the right commit ID, especially if the commit is from several months ago.
 >
-> Imagine the `planets` project has more than 50 files.
+> Imagine the `digits-classifier` project has more than 50 files.
 > You would like to find a commit with specific text in `mars.txt` is modified.
 > When you type `git log`, a very long list appeared,
 > How can you narrow down the search?
