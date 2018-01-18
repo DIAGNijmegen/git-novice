@@ -184,7 +184,7 @@ $ cat README.md
 {: .bash}
 
 ~~~
-We will need to manufacture our own oxygen
+We will need more labeled data
 ~~~
 {: .output}
 
@@ -350,7 +350,11 @@ moving backward and forward in time becomes much easier.
 >
 > 4. `$ git checkout <unique ID of last commit> data_cruncher.py`
 >
-> 5. Both 2 and 4
+> > ## Solution
+> >
+> > Both 2 and 4
+> >
+> {: .solution}
 {: .challenge}
 
 > ## Reverting a Commit
@@ -374,6 +378,11 @@ moving backward and forward in time becomes much easier.
 > 4. Type in the new commit message.
 >
 > 5. Save and close
+> > ## Solution
+> >
+> > `git log`
+> >
+> {: .solution}
 {: .challenge}
 
 > ## Understanding Workflow and History
@@ -382,10 +391,10 @@ moving backward and forward in time becomes much easier.
 >
 > ~~~
 > $ cd digits-classifier
-> $ nano svm/classify.py #input the following text: Venus is beautiful and full of love
+> $ nano svm/classify.py #input the following text: import matplotlib
 > $ git add svm/classify.py
-> $ nano svm/classify.py #add the following text: Venus is too hot to be suitable as a base
-> $ git commit -m "Comment on Venus as an unsuitable base"
+> $ nano svm/classify.py #add the following text: import tensorflow as tf
+> $ git commit -m "Imports tensorflow"
 > $ git checkout HEAD svm/classify.py
 > $ cat svm/classify.py #this will print the contents of svm/classify.py to the screen
 > ~~~
@@ -394,22 +403,22 @@ moving backward and forward in time becomes much easier.
 > 1.
 >
 > ~~~
-> Venus is too hot to be suitable as a base
+> import tensorflow as tf
 > ~~~
 > {: .output}
 >
 > 2.
 >
 > ~~~
-> Venus is beautiful and full of love
+> import matplotlib
 > ~~~
 > {: .output}
 >
 > 3.
 >
 > ~~~
-> Venus is beautiful and full of love
-> Venus is too hot to be suitable as a base
+> import matplotlib
+> import tensorflow as tf
 > ~~~
 > {: .output}
 >
@@ -430,7 +439,7 @@ moving backward and forward in time becomes much easier.
 > > Enters into the 'digits-classifier' directory
 > >
 > > ~~~
-> > $ nano svm/classify.py #input the following text: Venus is beautiful and full of love
+> > $ nano svm/classify.py #input the following text: import matplotlib
 > > ~~~
 > > {: .bash}
 > > We created a new file and wrote a sentence in it, but the file is not tracked by git.  
@@ -442,16 +451,16 @@ moving backward and forward in time becomes much easier.
 > > Now the file is staged. The changes that have been made to the file until now will be committed in the next commit.
 > >
 > > ~~~
-> > $ nano svm/classify.py #add the following text: Venus is too hot to be suitable as a base
+> > $ nano svm/classify.py #add the following text: import tensorflow as tf
 > > ~~~
 > > {: .bash}
 > > The file has been modified. The new changes are not staged because we have not added the file.
 > >
 > > ~~~
-> > $ git commit -m "Comment on Venus as an unsuitable base"
+> > $ git commit -m "Imports tensorflow"
 > > ~~~
 > > {: .bash}
-> > The changes that were staged (Venus is beautiful and full of love) have been committed. The changes that were not staged (Venus is too hot to be suitable as a base) have not. Our local working copy is different than the copy in our local repository.
+> > The changes that were staged (import matplotlib) have been committed. The changes that were not staged (import tensorflow as tf) have not. Our local working copy is different than the copy in our local repository.
 > >
 > > ~~~
 > > $ git checkout HEAD svm/classify.py
