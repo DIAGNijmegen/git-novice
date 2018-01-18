@@ -79,4 +79,5 @@ if __name__ == '__main__':
 >
 > Add the svm classifier code to `svm/classifier.py` and push the changes to
 > github. Then, create a pull request to merge the branch to master.
+> HINT: go to the branches drop down in your repo on the web interface of github.
 {: .challenge}
