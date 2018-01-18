@@ -17,9 +17,15 @@ to keep track of what one person did and when.
 Even if you aren't collaborating with other people,
 automated version control is much better than this situation:
 
-[![Piled Higher and Deeper by Jorge Cham, http://www.phdcomics.com/comics/archive_print.php?comicid=1531](../fig/phd101212s.png)](http://www.phdcomics.com)
-
-"Piled Higher and Deeper" by Jorge Cham, http://www.phdcomics.com
+* Paper_v1.docx
+* Paper_v1_PJ.docx
+* Paper_v1_TO.docx
+* Paper_v2.docx
+* Paper_sumitted.docx
+* Paper_revised.docx
+* Paper_revised_PJ.docx
+* Paper_final.docx
+* Paper_final_TO.docx
 
 We've all been in this situation before: it seems ridiculous to have
 multiple nearly-identical versions of the same document. Some word
